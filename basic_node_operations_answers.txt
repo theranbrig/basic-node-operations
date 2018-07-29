@@ -1,0 +1,38 @@
+Questions
+
+> Run the commands sort, wc and uniq on the commands.js file. Explain how they work and what the output was.
+
+* `sort` takes the lines of the files and puts them in alphabetical orders.  When this was run on the commands.js it places each line in order, starting with the spaces first, then letters, and finally ends with curly braces.
+* `wc` shows the number of newlines, the number of words and the bytes for a file.  In this case the commands.js file printed out 75 lines, 175 words, 1911 bytes.
+* `uniq` prints out the file like the cat function, but it will remove any duplicate lines.  In the case of the commands.js it looks like the regular file, since there are no duplicate lines.
+
+> Using the pipe (|) connect at least two commands and run it on commands.js. Explain what the output was and why the specific data was outputted.
+
+`head commands.js | wc`: This takes the first ten lines from the commands.js file and then runs `wc` on it.  Since it is only the first ten lines it has a smaller word count, and byte size.  The out put is 10 lines, 24 words, and 243 bytes.
+
+Reverse String
+
+> Given a string, reverse the order of characters in each word within a sentence while maintaining the original word order and whitespace and return the string. To improve your problem-solving experience, use the suggested functions to solve the problem.
+
+New ES6 Code
+
+
+function reverseString(inputString) {
+    const stringArray = []
+  const brokenStringArray = inputString.split('')
+  brokenStringArray.forEach((letter) => {
+    stringArray.push(letter)
+  })
+  return stringArray.reverse().join('')
+}
+
+
+
+Also using the spread operator and by chaining methods you could simply write the function as follows:
+
+
+function reverseString(inputString) {
+  return [...inputString].reverse().join('')
+}
+
+
